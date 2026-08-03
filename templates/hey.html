@@ -1,21 +1,17 @@
-<h1># bats-contre-le-jeu</h1>
-<div>
-choisis un sport / instrument de musique
-<select>
-<option>violon</option>
-<option>guitar</option>
-<option>basketball</option>
-<option>tennis</option>
-<option>football</option>
-<option>handball</option>
-</select>
+{% extends 'base.html' %}
 
-</div>
-<div>
-nom de ta ville
-<input name="city"/>
-</div>
-<div>
-regles du jeu/de l'activite
-<textarea name="rules"></textarea>
-</div>
+{% block montitre %}
+debut de mes mots: sports or music
+{% endblock %}
+{% block content %}
+<h1># bats-contre-le-jeu</h1>
+{% for x in users | reverse %}
+ <li>{{ x["first_name"]  }}</li>
+
+{% endfor %} 
+fin de mes mots : i dont fight against opponents, i fight against the multiplayers game/the  musical instrument
+{% endblock %}
+{% block liens %}
+<a href="/">welcome</a>
+{% endblock %}
+<a href="/add_one_sport"> add one sport</a><a href="/add_one_musical_instrument"> add one musical_instrument</a><a href="/add_one_rule_of_game"> add one rule_of_game</a><a href="/add_one_musical_or_technical_rule"> add one musical_or_technical_rule</a><a href="/add_one_user"> add one user</a><a href="/add_one_country"> add one country</a><a href="/add_one_my_points_earned_sports"> add one my_points_earned_sports</a><a href="/add_one_my_points_earned_music"> add one my_points_earned_music</a>
